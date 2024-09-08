@@ -5,6 +5,11 @@
     login_root_password: ExpensApp@1
     login_host: mysql.vasavi.online
   tasks: 
+  - name: ansible to install pymysql
+    ansible.builtin.pip: 
+      name: pymysql 
+      executable: pip3.9
+      
   - name: install mysql 
     ansible.builtin.package: 
       name: mysql-server
@@ -22,9 +27,6 @@
       login_password: "{{ login_root_password }}"
       login_host: "{{ login_host }}"
  
-  - name: ansible to install pymysql
-    ansible.builtin.pip: 
-      name: pymysql 
-      executable: pip3.3
+  
 
 
