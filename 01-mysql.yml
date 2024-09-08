@@ -21,6 +21,10 @@
       login_user: root  
       login_password: "{{ login_root_password }}"
       login_host: "{{ login_host }}"
-
+ 
+  - name: ansible to install pymysql
+    ansible.builtin.pip: 
+      name: pymysql 
+      executable: pip3.3
 
 
