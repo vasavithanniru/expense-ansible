@@ -19,8 +19,8 @@
   - name: connect to mysql server 
     ansible.mysql.mysql_info: 
       login_user: root  
-      login_password: {{"login_root_password"}}
-      login_host: {{"login_host"}} 
-      
+      login_password: "{{ login_root_password }}"
+      login_host: "{{ login_host }}"
+
 
 
