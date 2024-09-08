@@ -1,6 +1,9 @@
 - name: configure mysql
   hosts: mysql 
   become: yes 
+  vars: 
+    login_root_password: ExpensApp@1
+    login_host: mysql.vasavi.online
   tasks: 
   - name: install mysql 
     ansible.builtin.package: 
@@ -12,4 +15,12 @@
       name: mysqld 
       state: started 
       enabled: yes    
+
+  - name: connect to mysql server 
+    ansible.mysql.mysql_info: 
+      login_user: root  
+      login_password: {{"login_root_password"}}
+      login_host: {{"login_host"}} 
+      
+
 
