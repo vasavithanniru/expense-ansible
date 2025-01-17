@@ -10,18 +10,18 @@
       name: PyMySQL 
       executable: pip3.9
 
-- name: mysql configuration
-  hosts: mysql
-  become: yes
-  vars:
-    mysql_root_password: ExpenseApp@1
-    login_host: mysql.vasavi.online
-  tasks:
-  - name: ansible to install pymysql
-    ansible.builtin.pip:
-      name:
-      - PyMySQL
-      executable: pip3.9
+# - name: mysql configuration
+#   hosts: mysql
+#   become: yes
+#   vars:
+#     mysql_root_password: ExpenseApp@1
+#     login_host: mysql.vasavi.online
+#   tasks:
+#   - name: ansible to install pymysql
+#     ansible.builtin.pip:
+#       name:
+#       - PyMySQL
+#       executable: pip3.9
   - name: install MySQL Server
     ansible.builtin.package:
       name: mysql-server
